@@ -1,1 +1,1 @@
-Subiect2017Tic
+Subiect 2017 Tic C#
