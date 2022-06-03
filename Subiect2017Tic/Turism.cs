@@ -131,10 +131,24 @@ namespace Subiect2017Tic
 
         private void Turism_Load(object sender, EventArgs easdsa)
         {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs ec)
+        {
+            Form GenereazaPosterForm;
+            this.Hide();
+            GenereazaPosterForm = new GenereazaPoster();
+            GenereazaPosterForm.FormClosed += (s, e) => this.Show();
+            GenereazaPosterForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs ec)
+        {
             Form GenereazaPosterForm;
             this.Hide();
             GenereazaPosterForm = new VizualizareExcursie();
-            GenereazaPosterForm.FormClosed += (s, e) => this.Close();
+            GenereazaPosterForm.FormClosed += (s, e) => this.Show();
             GenereazaPosterForm.ShowDialog();
         }
     }

@@ -32,19 +32,29 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.GenerareExcursieButton = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.pictureBoxItinerariu = new System.Windows.Forms.PictureBox();
+            this.labelLocalitate = new System.Windows.Forms.Label();
+            this.labelData = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.ButtonStart = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItinerariu)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -91,8 +101,19 @@
             this.tabPage2.Text = "Perioade de vizitare";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(902, 553);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -101,8 +122,23 @@
             this.tabPage3.Text = "Vizualizare itinerariu";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(909, 556);
+            this.dataGridView3.TabIndex = 0;
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.ButtonStart);
+            this.tabPage4.Controls.Add(this.progressBar1);
+            this.tabPage4.Controls.Add(this.labelData);
+            this.tabPage4.Controls.Add(this.labelLocalitate);
+            this.tabPage4.Controls.Add(this.pictureBoxItinerariu);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -155,15 +191,50 @@
             this.GenerareExcursieButton.UseVisualStyleBackColor = true;
             this.GenerareExcursieButton.Click += new System.EventHandler(this.GenerareExcursieButton_Click);
             // 
-            // dataGridView2
+            // pictureBoxItinerariu
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(902, 553);
-            this.dataGridView2.TabIndex = 0;
+            this.pictureBoxItinerariu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxItinerariu.Location = new System.Drawing.Point(4, 6);
+            this.pictureBoxItinerariu.Name = "pictureBoxItinerariu";
+            this.pictureBoxItinerariu.Size = new System.Drawing.Size(872, 498);
+            this.pictureBoxItinerariu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxItinerariu.TabIndex = 0;
+            this.pictureBoxItinerariu.TabStop = false;
+            // 
+            // labelLocalitate
+            // 
+            this.labelLocalitate.AutoSize = true;
+            this.labelLocalitate.Location = new System.Drawing.Point(9, 519);
+            this.labelLocalitate.Name = "labelLocalitate";
+            this.labelLocalitate.Size = new System.Drawing.Size(78, 20);
+            this.labelLocalitate.TabIndex = 1;
+            this.labelLocalitate.Text = "Localitate";
+            // 
+            // labelData
+            // 
+            this.labelData.AutoSize = true;
+            this.labelData.Location = new System.Drawing.Point(137, 519);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(44, 20);
+            this.labelData.TabIndex = 2;
+            this.labelData.Text = "Data";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(627, 519);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(249, 23);
+            this.progressBar1.TabIndex = 3;
+            // 
+            // ButtonStart
+            // 
+            this.ButtonStart.Location = new System.Drawing.Point(521, 519);
+            this.ButtonStart.Name = "ButtonStart";
+            this.ButtonStart.Size = new System.Drawing.Size(80, 27);
+            this.ButtonStart.TabIndex = 4;
+            this.ButtonStart.Text = "Start";
+            this.ButtonStart.UseVisualStyleBackColor = true;
+            this.ButtonStart.Click += new System.EventHandler(this.ButtonStart_Click);
             // 
             // VizualizareExcursie
             // 
@@ -183,6 +254,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItinerariu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +278,11 @@
         private System.Windows.Forms.Button GenerareExcursieButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button ButtonStart;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label labelData;
+        private System.Windows.Forms.Label labelLocalitate;
+        private System.Windows.Forms.PictureBox pictureBoxItinerariu;
     }
 }

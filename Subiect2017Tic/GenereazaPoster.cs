@@ -156,6 +156,8 @@ namespace Subiect2017Tic
         public string CaleFisier { get; set; }
         public Image Load()
         {
+            if (img != null)
+                return img;
             img = Image.FromFile(Turism.ImageFolderPath + "\\" + CaleFisier);
             return img;
         }
@@ -188,6 +190,8 @@ namespace Subiect2017Tic
         }
         public void LoadImagini()
         {
+            if (imagini.Count > 0)
+                return;
             SqlCommand cmd = new SqlCommand("select * from Imagini where IDLocalitate=@p1",Turism.con);
             cmd.Parameters.AddWithValue("p1", IDLocalitate);
             var res = cmd.ExecuteReader();
@@ -197,7 +201,7 @@ namespace Subiect2017Tic
                 {
                     IDImagine = (int)res[0],
                     IDLocalitate = (int)res[1],
-                    CaleFisier = (string)res[2]
+                    CaleFisier = (string)res[2],
                 });
             }
             res.Close();
